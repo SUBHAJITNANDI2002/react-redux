@@ -1,9 +1,11 @@
 import React from 'react'
-
-const Home = () => {
+const Home = (props) => {
+  console.log('home',props.data)
   return (
+
     <div>
         <div className='add-to-cart'>
+          <span className='cart-count'>{props.data.length}</span>
             <img src="https://www.shutterstock.com/shutterstock/photos/1690453492/display_1500/stock-vector-shopping-cart-vector-icon-flat-design-isolated-on-white-background-1690453492.jpg" alt="" />
 
         </div>
@@ -23,7 +25,8 @@ const Home = () => {
         </div>
 
         <div className='btn-wrapper item'>
-            <button>Add To Cart</button>
+            <button onClick={()=>props.addToCartHandler({price:1000,name:'iphone 11'})}
+            >Add To Cart</button>
 
         </div>
       </div>
